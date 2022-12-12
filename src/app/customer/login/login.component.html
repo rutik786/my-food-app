@@ -1,0 +1,35 @@
+<div>
+  <img src="../../../assets/images/loginimg.jpeg">
+  <div class="container ">
+    <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+      <div class="form-group row fieldemail">
+        <label for="email" class="col-1 col-forl-label text-light">Email:</label>
+        <div class="col-sm-4">
+          <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email" required
+            (blur)="getUseridValue($event)" (blur)="getUseridValue($event)">
+        </div>
+        <div class="col-md-6">
+          <p class="error-message email-message">{{erroremail}}</p>
+        </div>
+      </div>
+
+      <div class="form-group row fieldpassword">
+        <label for="password" class="col-1 col-forl-label text-light">Password:</label>
+        <div class="col-sm-4">
+          <input type="password" class="form-control" id="password" name="password" [(ngModel)]="password" required
+            (blur)="getPasswordValue($event)" (blur)="getPasswordValue($event)">
+        </div>
+        <div class="col-md-6">
+          <p class="error-message password-message">{{errorpassword}}</p>
+        </div>
+      </div>
+
+      <button type="submit" [disabled]="!loginForm.valid" value="login" class="btn btn-outline-light" (click)="login()"
+        >Login</button>
+
+    </form><br>
+    <p class="message">If you don't have an account then<a [routerLink]="['/customer/register','Mrunmai Tirathkar']"
+        [queryParams]="{address:'abc complex', phone:9011496593, userid:'abc@merce.co', password:'Mrunmai@123', confirmpassword:'Mrunmai@123'}"><b>
+          Register</b></a></p>
+  </div>
+</div>

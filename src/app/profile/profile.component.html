@@ -1,0 +1,16 @@
+<div>
+  <img src="../../assets/images/profile.jpeg" />
+  <h1 class="heading text-light">Order Details</h1>
+  <h1 class="heading text-light">Order Details</h1>
+</div>
+<div class="row">
+<div *ngFor="let data of orderlist" class="card col-4 bg-transparent text-center " style="width: 5rem;" >
+  <img class="card-img-top " style="height: 15rem; " src={{data.img}} alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title text-light">{{data.title}}</h5>
+    <h5 class="card-title text-light">{{data.price | currency}}</h5>
+    <h5 class="card-title text-light"><span>🕒 </span>{{data.cooktime}} min</h5>
+  </div>
+</div>
+<button class="btn btn-outline-light" (click)="onsubmit()" *ngIf="placeorder">Place Order</button>
+</div>

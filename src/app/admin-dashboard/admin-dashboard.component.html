@@ -1,0 +1,72 @@
+<nav class="navbar navbar-light">
+  <div class="container-fluid text-light">
+    <h3>Dashboard</h3>
+    <div class="d-flex">
+      <button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#staticBackdrop">Update</button>
+    </div>
+  </div>
+</nav>
+
+<!-- Table -->
+<table class="table bg-light mt-5">
+  <thead>
+    <tr>
+      <th scope="col">Order ID</th>
+      <th scope="col">Item</th>
+      <th scope="col-1">Quantity</th>
+      <th scope="col-2">Order Date</th>
+      <th scope="col-2">Total Price</th>
+      <th scope="col-3">Action</th>
+      <th scope="col-3">State</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of orders.newDataset; index as i">
+      <td>{{ data.OrderNumber }}</td>
+      <td>{{ data.ItemName }}</td>
+      <td>{{ data.Quantity }}</td>
+      <td>{{ data.OrderDate | date: "fullDate" }}</td>
+      <td >{{ data.ProductPrice | currency }}</td>
+      <td>
+        <button class="btn btn-success" (click)="acceptButton()">✓</button
+        >&nbsp;
+        <button class="btn btn-danger" (click)="rejectButton()">X</button>
+      </td>
+      <td>{{ status }}</td>
+    </tr>
+  </tbody>
+</table>
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="formGroupExampleInput">Item</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="eg.pizza">
+          </div>
+          <div class="form-group">
+            <label for="formGroupExampleInput2">Quantity</label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Input Quantity of order">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-outline-primary">Update</button>
+      </div>
+    </div>
+  </div>
+</div>
+

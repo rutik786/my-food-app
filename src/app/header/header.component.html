@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <img class="logo" src={{logo}}>
+  <h5 class="nav">Welcome Foodie</h5>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/home']">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/aboutus']">About Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/customer/login']"
+          [queryParams]="{email: 'user@gmail.com', password:'user@123'}">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="profile">Orders</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/login']">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,32 @@
+.navbar1 {
+  width: 102%;
+  height: 14vh;
+  box-shadow: 5px 10px 18px #ece7e7;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 55% 30% 15%;
+  margin-left: -1%;
+  align-items: center;
+  margin-bottom: 1%;
+}
+
+.img {
+  width: 7%;
+  border-radius: 15%;
+}
+
+a:hover {
+  color: brown;
+}
+
+.logo {
+  width: 5%;
+}
+
+.navbar-nav {
+  margin-left: 65%;
+}
+
+.nav {
+  color: white;
+}

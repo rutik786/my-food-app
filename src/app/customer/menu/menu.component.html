@@ -1,0 +1,22 @@
+<div class="row">
+    <div *ngFor="let data of menu1.newDataset;" class="card col-4 bg-transparent text-center " style="width: 5rem;" >
+      <img class="card-img-top " style="height: 15rem; " src={{data.img}} alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title text-light">{{data.title}}</h5>
+        <h5 class="card-title text-light">{{data.price | currency}}</h5>
+        <h5 class="card-title text-light"><span>🕒 </span>{{data.cooktime}} min</h5>
+        <a [routerLink]="['/profile']" class="btn btn-outline-light rounded-pill" (click)="addmenu(data)">Add</a>
+      </div>
+    </div>
+  </div>
+  <div>
+    <br>
+    <nav aria-label="Page navigation example">
+      <ul class="pagination">
+
+        <li class="page-item-light"><a class="page-link " (click)="menu1.loadData(1)">Prev</a></li>
+        <li class="page-item"><a class="page-link" (click)="menu1.loadData(2)">Next</a></li>
+
+      </ul>
+    </nav>
+  </div>

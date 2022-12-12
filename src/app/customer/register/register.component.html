@@ -1,0 +1,74 @@
+<form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
+    <img src="../../../assets/images/registerimg.webp">
+    <div class="container bg-light">
+        <div class="form-group row fieldname">
+            <label for="name" class="col-md-2 col-form-label text-light">Name:</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control" id="name" name="name" [(ngModel)]="name"
+                    placeholder="Enter Name" required (blur)="getNameValue($event)">
+            </div>
+            <div class="col-md-6">
+                <p class="error-message name-message">{{errorname}}</p>
+            </div>
+        </div>
+
+        <div class="form-group row fieldaddress">
+            <label for="address" class="col-md-2 col-form-label text-light">Address:</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control" id="adress" name="adress" [(ngModel)]="address"
+                    placeholder="Enter Address" required (blur)="getAddressValue($event)">
+            </div>
+            <div class="col-md-6">
+                <p class="error-message address-message">{{erroraddress}}</p>
+            </div>
+        </div>
+
+        <div class="form-group row fieldphone">
+            <label for="phone" class="col-md-2 col-form-label text-light">Phone:</label>
+            <div class="col-md-4">
+                <input type="number" class="form-control" id="phone" name="phone" [(ngModel)]="phone"
+                    placeholder="Enter Phone" required (blur)="getPhoneValue($event)">
+            </div>
+            <div class="col-md-6">
+                <p class="error-message phone-message">{{errorphone}}</p>
+            </div>
+        </div>
+
+        <div class="form-group row fielduserid">
+            <label for="email" class="col-md-2 col-form-label text-light">Email:</label>
+            <div class="col-md-4">
+                <input type="email" class="form-control" id="userid" name="userid" [(ngModel)]="userid"
+                    placeholder="Enter User Id" required (blur)="getUseridValue($event)">
+            </div>
+            <div class="col-md-6">
+                <p class="error-message userid-message">{{erroruserid}}</p>
+            </div>
+        </div>
+        <div class="form-group row fieldpassword">
+            <label for="password" class="col-md-2 col-form-label text-light">Password:</label>
+            <div class="col-md-4">
+                <input type="password" class="form-control" id="password" name="password" [(ngModel)]="userid"
+                    placeholder="Enter Password" required (blur)="getPasswordValue($event)">
+            </div>
+            <div class="col-md-6">
+                <p class="error-message passwordr-message">{{errorpassword}}</p>
+            </div>
+        </div>
+        <div class="form-group row fieldconfirmpassword">
+            <label for="confirmpassword" class="col-md-2 col-form-label text-light">Confirm Password:</label>
+            <div class="col-md-4">
+                <input type="password" class="form-control" id="confirmpassword" name="confirmpassword"
+                    [(ngModel)]="confirmpassword" placeholder="Enter Confirm Password" required
+                    (blur)="getConfirmpasswordValue($event)">
+            </div>
+            <div class="col-md-6">
+                <p class="error-message password-message">{{errorconfirmpassword}}</p>
+            </div>
+        </div>
+        <button type="reset" class="btn btn-outline-light button" value="reset" (click)="reset()">Reset</button>
+        <button type="submit" [disabled]="!registerForm.valid" class="btn btn-outline-light button1 " value="register"
+            (click)="register()">Register</button>
+        <hr width="90%">
+    </div>
+
+</form>
